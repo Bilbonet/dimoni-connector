@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Dimoni Connection -->
+    <record id="dimoni_form_res_company" model="ir.ui.view">
+        <field name="name">Dimoni Connection</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page" position="after">
+                <page string="Dimoni Connection">
+                    <group>
+                        <group>
+                            <field name="dbconnection_id"/>
+                        </group>
+                        <group>
+                            <field name="dimoni_company"
+                                   required="True"
+                                   domain="[('dbconnection_id', '=', dbconnection_id)]"
+                                   options='{"no_open": True, "no_create": True}'/>
+                            <field name="dimoni_serie"
+                                   required="True"
+                                   domain="[('grp_id', '=', dimoni_company)]"
+                                   options='{"no_open": True, "no_create": True}'/>
+                            <field name="dimoni_docsale"
+                                   required="True"
+                                   domain="[('ambito', '=', 2)]"
+                                   options='{"no_open": True, "no_create": True}'/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Action from res.company -->
+    <record id="action_dimoni_import_companies" model="ir.actions.server">
+        <field name="name">Dimoni Import Companies</field>
+        <field name="condition">True</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="dimoni_connector" />
+        <field name="state">code</field>
+        <field name="code">self.import_company(cr, uid, context=context)</field>
+    </record>
+
+</odoo>
