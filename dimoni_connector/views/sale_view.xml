@@ -7,15 +7,32 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
+            <button name="action_unlock" position="attributes">
+                <attribute name="attrs">{'invisible':['|',('state', 'not in', ('done')),('dimoni_sale','!=', False)]}</attribute>
+                <attribute name="states"/>
+            </button>
             <xpath expr="//button[@name='action_unlock']" position="after">
                 <button type="object"
                         name="dimoni_create_sale"
                         string="Dimoni"
                         class="oe_stat_button"
-                        icon="fa-truck"
-                        states="draft,sent,sale"
+                        attrs="{'invisible':['|',('state', 'not in', ('sale', 'done')),('dimoni_sale','!=', False)]}"
                         groups="sales_team.group_sale_manager">
                 </button>
+                <button type="object"
+                        name="dimoni_delete_sale"
+                        string="Delete Dimoni"
+                        style="color:red;"
+                        attrs="{'invisible':['|',('state', 'not in', ('sale', 'done')),('dimoni_sale','=', False)]}"
+                        groups="sales_team.group_sale_manager">
+                </button>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="dimoni_sale"
+                       options='{"no_open": True, "no_create": True}'
+                       attrs="{'invisible':[('dimoni_sale','=',False)]}"
+                       readonly="1"
+                       style="color:red;"/>
             </xpath>
         </field>
     </record>

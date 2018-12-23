@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dimoni_company_group_system,dimoni.company group_system,model_dimoni_company,base.group_system,1,1,1,1
+access_dimoni_company_sale_manager,dimoni.company sale_manager,model_dimoni_company,sales_team.group_sale_manager,1,0,0,0
+access_dimoni_serie_group_system,dimoni.serie group_system,model_dimoni_serie,base.group_system,1,1,1,1
+access_dimoni_serie_sale_manager,dimoni.serie sale_manager,model_dimoni_serie,sales_team.group_sale_manager,1,0,0,0
+access_dimoni_document_group_system,dimoni.document group_system,model_dimoni_document,base.group_system,1,1,1,1
+access_dimoni_document_sale_manager,dimoni.document sale_manager,model_dimoni_document,sales_team.group_sale_manager,1,0,0,0
+access_dimoni_sale_manager,dimoni.sale manager,model_dimoni_sale,sales_team.group_sale_manager,1,1,1,1
+access_base_external_dbsource_sale_manager,bae.external.dbsource sale_manager,base_external_dbsource.model_base_external_dbsource,sales_team.group_sale_manager,1,0,0,0
