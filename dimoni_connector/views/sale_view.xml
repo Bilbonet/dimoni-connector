@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- Sale Order -->
+    <!-- Sale Order Form-->
     <record id="dimoni_form_sale_order" model="ir.ui.view">
         <field name="name">Dimoni Sale Order</field>
         <field name="model">sale.order</field>
@@ -34,6 +34,38 @@
                        readonly="1"
                        style="color:red;"/>
             </xpath>
+        </field>
+    </record>
+
+    <!-- Sale Order Quotation Tree-->
+    <record id="dimoni_view_quotation_tree" model="ir.ui.view">
+        <field name="name">Dimoni sale.order,quotation.tree</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <tree position="inside">
+                <field name="dimoni_sale"/>
+            </tree>
+            <tree position="attributes">
+                <attribute name="decoration-danger">dimoni_sale!=False</attribute>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Sale Order Tree-->
+    <record id="dimoni_view_order_tree" model="ir.ui.view">
+        <field name="name">Dimoni sale.order.tree</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <tree position="inside">
+                <field name="dimoni_sale"/>
+            </tree>
+            <tree position="attributes">
+                <attribute name="decoration-danger">dimoni_sale!=False</attribute>
+            </tree>
         </field>
     </record>
 

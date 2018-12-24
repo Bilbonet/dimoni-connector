@@ -269,31 +269,35 @@ class DimoniSale(models.Model):
         data = [
             self.grp_id, self.cod_serie, self.tipo_doc,
             sale_order.partner_id.ref, self.ejercic, self.document,
-            sale_order.confirmation_date, self.signo, self.cod_serie,
-            self.refnum,
+            datetime.strptime(sale_order.confirmation_date,
+                              "%Y-%m-%d %H:%M:%S"),
+            self.signo, self.cod_serie, self.refnum,
+            datetime.strptime(sale_order.confirmation_date,
+                              "%Y-%m-%d %H:%M:%S"),
+            sale_order.partner_id.ref,
             sale_order.name,
         ]
 
         sql = "INSERT INTO PIVCA " \
               "(GRP_ID,Serie,TipoDoc," \
               "Cuenta,Ejercic,Document," \
-              "Fecha,Signo,RefSerie," \
-              "RefNum,Nombre,Razon,Siglas," \
-              "Numero,Domicili,Ampliaci,Localida,Pais,Territor,Cpostal,Nif," \
-              "Tlfno1,Tlfno2,Fax,Moneda,Cambio,Limite,CtaAsig,Proces," \
-              "Historic,Export,Actualiz,Eliminad,MonDoc,Contabil,Impuesto," \
-              "Origen,Emitido,DirEmail,DirWeb,ClaseDoc,ImpPortF,AduanaF," \
-              "ArancelF,SuRef,Vendedor,Observac,RefExt,Clave,oExped,oTipo) " \
+              "Fecha," \
+              "Signo,RefSerie,RefNum," \
+              "Moneda,Cambio," \
+              "Limite,CtaAsig,Proces," \
+              "Historic,Export,Actualiz,Eliminad,MonDoc,Contabil," \
+              "Origen,Emitido,DirEmail,DirWeb,ClaseDoc," \
+              "SuRef,Vendedor,Observac,RefExt,Clave) " \
               "VALUES " \
               "(?, ?, ?, " \
               "?, ?, ?, " \
+              "?, " \
               "?, ?, ?, " \
-              "?, '', '', '', " \
-              "'','','','','','','',''," \
-              "'','','','978','1','','','2'," \
-              "'2','2','1','2','','2',''," \
-              "'1','2','','','1','1','1'," \
-              "'1',?,'','','','','','')"
+              "'978','1'," \
+              "?,?,'2'," \
+              "'2','2','1','2','1','2'," \
+              "'1','2','','','1'," \
+              "?,'','','','')"
         db_dimoni.commit(sql, data)
         return True
 
