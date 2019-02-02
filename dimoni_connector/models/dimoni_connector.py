@@ -23,7 +23,7 @@ class DimoniCompany(models.Model):
     name = fields.Char(string='Dimoni Company Name', size=40)
 
     # Prepare the internal XML-ID in column "id"
-    def _build_xmlid(row_id, model_name):
+    def _build_xmlid(self, row_id, model_name):
         # Replace dots "." by "-" because in XML-ID dots are not allowed
         row_id = row_id.replace('.', '-')
         xml_prefix = model_name.replace('.', '_')
@@ -79,7 +79,8 @@ class DimoniCompany(models.Model):
                 if isinstance(v, str):
                     v = v.strip()
                 data.append(v)
-            data.append(DimoniCompany._build_xmlid(row[0].strip(), self._name))
+            data.append(DimoniCompany._build_xmlid(
+                                            self, row[0].strip(), self._name))
             data.append(company.dbconnection_id.id)
 
             # Import row
@@ -126,7 +127,8 @@ class DimoniSeries(models.Model):
                 if isinstance(v, str):
                     v = v.strip()
                 data.append(v)
-            data.append(DimoniCompany._build_xmlid(row[0].strip(), self._name))
+            data.append(DimoniCompany._build_xmlid(
+                                            self, row[0].strip(), self._name))
 
             # Import row
             DimoniCompany._import_data(self, cols, data, model_obj)
@@ -179,7 +181,8 @@ class DimoniDocument(models.Model):
                 if isinstance(v, str):
                     v = v.strip()
                 data.append(v)
-            data.append(DimoniCompany._build_xmlid(row[0].strip(), self._name))
+            data.append(DimoniCompany._build_xmlid(
+                                            self, row[0].strip(), self._name))
 
             # Import row
             DimoniCompany._import_data(self, cols, data, model_obj)
@@ -454,13 +457,3 @@ class DimoniSale(models.Model):
             self.unlink()
 
         return True
-
-
-
-    # if sale_order.ids:
-        #     raise UserError(
-        #         'Codigo Empresa: %s\n'
-        #         'Serie: %s\n'
-        #         'Tipo Doc.: %s'
-        #         % (grp_id, serie, tipo_doc)
-        #     )

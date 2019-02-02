@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!-- Dimoni Warehouse OPA -->
+    <record id="dimoni_warehouse_form_res_company" model="ir.ui.view">
+        <field name="name">Company Dimoni Warehouse</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="dimoni_connector.dimoni_form_res_company"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='sale_order']" position="after">
+                <group name="sale_warehouse" string="Dimoni Warehouse OPA">
+                    <field name="dimoni_serie_wh"
+                           required="True"
+                           domain="[('grp_id', '=', dimoni_company)]"
+                           options='{"no_open": True, "no_create": True}'/>
+                    <field name="dimoni_docwh"
+                           required="True"
+                           domain="[('ambito', '=', 1)]"
+                           options='{"no_open": True, "no_create": True}'/>
+                    <field name="dimoni_originwh"
+                           required="True"
+                           domain="[('grp_id', '=', dimoni_company)]"
+                           options='{"no_open": True, "no_create": True}'/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

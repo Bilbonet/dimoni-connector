@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models
-from odoo.exceptions import ValidationError
+
 
 class Company(models.Model):
     _inherit = 'res.company'
@@ -12,9 +12,9 @@ class Company(models.Model):
     dimoni_company = fields.Many2one('dimoni.company',
                                 string='Dimoni Company')
     dimoni_serie = fields.Many2one('dimoni.serie',
-                                string='Dimoni Serie')
+                                string='Dimoni Serie Sales')
     dimoni_docsale = fields.Many2one('dimoni.document',
-                                string='Dimoni Sale')
+                                string='Dimoni Sale OPA')
 
     @api.onchange('dbconnection_id')
     def _onchange_dbconnection(self):

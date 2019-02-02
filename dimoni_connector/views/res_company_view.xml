@@ -1,23 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <odoo>
 
     <!-- Dimoni Connection -->
     <record id="dimoni_form_res_company" model="ir.ui.view">
-        <field name="name">Dimoni Connection</field>
+        <field name="name">Company Dimoni Connection</field>
         <field name="model">res.company</field>
         <field name="inherit_id" ref="base.view_company_form"/>
         <field name="arch" type="xml">
             <xpath expr="//page" position="after">
                 <page string="Dimoni Connection">
+                    <!-- Connection & Company-->
                     <group>
                         <group>
                             <field name="dbconnection_id"/>
-                        </group>
-                        <group>
                             <field name="dimoni_company"
                                    required="True"
                                    domain="[('dbconnection_id', '=', dbconnection_id)]"
                                    options='{"no_open": True, "no_create": True}'/>
+                        </group>
+                    </group>
+                    <!-- Operations Types-->
+                    <group>
+                        <group name="sale_order" string="Dimoni Sale OPA">
                             <field name="dimoni_serie"
                                    required="True"
                                    domain="[('grp_id', '=', dimoni_company)]"
