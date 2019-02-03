@@ -11,8 +11,6 @@ class Company(models.Model):
                                 string='Dimoni Serie Warehouse')
     dimoni_docwh = fields.Many2one('dimoni.document',
                                 string='Dimoni Warehouse OPA')
-    dimoni_originwh = fields.Many2one('dimoni.warehouse',
-                                string="Dimoni Origin Warehouse")
 
     @api.onchange('dimoni_company')
     def _onchange_dimoni_company_wh(self):
@@ -24,6 +22,5 @@ class Company(models.Model):
 
     @api.onchange('dimoni_docwh')
     def _onchange_dimoni_docwh(self):
-        self.dimoni_originwh = False
         if self.dimoni_serie_wh:
             self.env['dimoni.warehouse'].import_warehouse(self)

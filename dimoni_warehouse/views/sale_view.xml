@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- Sale Order Form-->
+    <record id="dimoni_warehouse_form_sale_order" model="ir.ui.view">
+        <field name="name">Dimoni Warehouse Order</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <!-- Sale Operations buttons hide with Dimoni Warehouse selected -->
+            <xpath expr="//button[@name='dimoni_create_sale']" position="attributes">
+                <attribute name="attrs">{'invisible':['|','|',('state', 'not in', ('sale', 'done')),('dimoni_sale','!=', False),('dimoni_wh','!=', False)]}</attribute>
+            </xpath>
+            <xpath expr="//button[@name='dimoni_delete_sale']" position="attributes">
+                <attribute name="attrs">{'invisible':['|','|',('state', 'not in', ('sale', 'done')),('dimoni_sale','=', False),('dimoni_wh','!=', False)]}</attribute>
+            </xpath>
+            <!-- Warehouse Operations buttons -->
+            <xpath expr="//button[@name='dimoni_create_sale']" position="after">
+                <button type="object"
+                        name="dimoni_create_warehouse"
+                        string="Dimoni Warehouse"
+                        class="oe_stat_button"
+                        attrs="{'invisible':['|','|',('state', 'not in', ('sale', 'done')),('dimoni_sale','!=', False),('dimoni_wh','=', False)]}"
+                        groups="sales_team.group_sale_manager">
+                </button>
+                <button type="object"
+                        name="dimoni_delete_warehouse"
+                        string="Delete Dimoni Warehouse"
+                        style="color:red;"
+                        attrs="{'invisible':['|','|',('state', 'not in', ('sale', 'done')),('dimoni_sale','=', False),('dimoni_wh','=', False)]}"
+                        groups="sales_team.group_sale_manager">
+                </button>
+            </xpath>
+            <!-- Select Dimoni Warehouse destiny -->
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="dimoni_wh" string="Dimoni Warehouse Destiny"
+                       options='{"no_open": True, "no_create": True}'
+                        style="color:red;"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -3,7 +3,7 @@
 
 import sys
 from datetime import datetime
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 from odoo.exceptions import ValidationError, UserError
 
 
@@ -203,7 +203,7 @@ class DimoniSale(models.Model):
     refnum = fields.Char(string='Dimoni Docu Reference', size=15)
     ejercic = fields.Char(
         string='Dimoni two digits year as accounting exercise', size=2)
-    signo = fields.Char(string='V: Sale, P:Purchase', size=1)
+    signo = fields.Char(string='V: Sale, P:Purchase, A:Warehouse', size=1)
     name = fields.Char(compute='_compute_name')
 
     @api.one
@@ -350,7 +350,7 @@ class DimoniSale(models.Model):
         db_dimoni = sale_order.company_id.dbconnection_id
         grp_id = sale_order.company_id.dimoni_company.grp_id
         serie = sale_order.company_id.dimoni_serie.cod_serie
-        tipo_doc = sale_order.company_id. dimoni_docsale.tipo_doc
+        tipo_doc = sale_order.company_id.dimoni_docsale.tipo_doc
         params = [grp_id, serie, tipo_doc]
 
         document_number = self._asign_document_number(db_dimoni, params)
@@ -411,7 +411,7 @@ class DimoniSale(models.Model):
             db_dimoni.commit(sql, params)
 
             # Delete Lines. We have to change parameters.
-            params = [i for j, i in enumerate(params) if j not in (1, 3, 5)]
+            params = [i for j, i in enumerate(params) if j not in (1, 3, 5, 7)]
             sql = "DELETE PIVLI " \
                   "Where GRP_ID = ? And RefSerie = ? " \
                   "And RefNum = ? And Signo = ?"
@@ -433,23 +433,23 @@ class DimoniSale(models.Model):
             res = db_dimoni.commit(sql, params)
             # We find the document procesed and Alert
             if res:
-                raise UserError(
-                    "Document: %s\n"
+                raise UserError(_
+                    ("Document: %s\n"
                     "The document has been processed in Dimoni.\n"
-                    "You should first delete it in Dimoni."
+                    "You should first delete it in Dimoni.")
                     % self.name)
                 return False
             else:
                 return True
         else:
-            raise UserError(
-                "Something is wrong. Results of the search are not correct.")
+            raise UserError(_
+                ("Something is wrong. Results of the search are not correct."))
             return False
 
     @api.multi
-    def dimoni_delete_sale(self, dimoni_sale_id):
+    def dimoni_delete_sale(self, dimoni_document):
         # Keep dimoni document in self
-        self = dimoni_sale_id
+        self = dimoni_document
 
         res = self._dimoni_delete_document()
         # Delete record

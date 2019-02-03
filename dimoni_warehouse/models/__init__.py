@@ -3,3 +3,4 @@
 
 from . import res_company
 from . import dimoni_warehouse
+from . import sale_order

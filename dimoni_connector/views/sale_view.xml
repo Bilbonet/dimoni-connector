@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <odoo>
 
     <!-- Sale Order Form-->
@@ -14,14 +14,14 @@
             <xpath expr="//button[@name='action_unlock']" position="after">
                 <button type="object"
                         name="dimoni_create_sale"
-                        string="Dimoni"
+                        string="Dimoni Sale"
                         class="oe_stat_button"
                         attrs="{'invisible':['|',('state', 'not in', ('sale', 'done')),('dimoni_sale','!=', False)]}"
                         groups="sales_team.group_sale_manager">
                 </button>
                 <button type="object"
                         name="dimoni_delete_sale"
-                        string="Delete Dimoni"
+                        string="Delete Dimoni Sale"
                         style="color:red;"
                         attrs="{'invisible':['|',('state', 'not in', ('sale', 'done')),('dimoni_sale','=', False)]}"
                         groups="sales_team.group_sale_manager">

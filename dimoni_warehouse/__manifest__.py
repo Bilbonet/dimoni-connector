@@ -12,7 +12,9 @@
         'stock',
     ],
     "data": [
+        'security/ir.model.access.csv',
         'views/res_company_view.xml',
+        'views/sale_view.xml',
     ],
     'installable': True,
 }

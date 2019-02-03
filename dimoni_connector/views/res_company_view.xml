@@ -32,6 +32,10 @@
                                    options='{"no_open": True, "no_create": True}'/>
                         </group>
                     </group>
+                    <group name="group_legend" string="Important notes:">
+                        <p> <strong>Before change the year and serie's counters,</strong> you shouldn't have sales pending in the previous year.<br/>
+                        Otherwise the document numbers don't coincide betwen Odoo and Dimoni.</p>
+                    </group>
                 </page>
             </xpath>
         </field>
