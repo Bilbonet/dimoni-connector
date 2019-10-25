@@ -26,12 +26,10 @@ Usage
 To use this module:
 
 * Go to Settings > Database Structure > Database Sources
-* Click on Create to enter the following information:
+    * Click on Create and enter the information for the connection
 
-* Datasource name 
-* Pasword
-* Connector: Choose the database to which you want to connect
-* Connection string: Specify how to connect to database
+* Got to Settings > Users and Companies > Companies
+    * Edit company and enter the information in 'Dimoni Connectión' sheet.
 
 
 Known issues / Roadmap

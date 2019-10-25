@@ -272,10 +272,10 @@ class DimoniSale(models.Model):
         data = [
             self.grp_id, self.cod_serie, self.tipo_doc,
             sale_order.partner_id.ref, self.ejercic, self.document,
-            datetime.strptime(sale_order.confirmation_date,
+            datetime.strptime(str(sale_order.confirmation_date),
                               "%Y-%m-%d %H:%M:%S"),
             self.signo, self.cod_serie, self.refnum,
-            datetime.strptime(sale_order.confirmation_date,
+            datetime.strptime(str(sale_order.confirmation_date),
                               "%Y-%m-%d %H:%M:%S"),
             sale_order.partner_id.ref,
             sale_order.name,
@@ -355,7 +355,7 @@ class DimoniSale(models.Model):
 
         document_number = self._asign_document_number(db_dimoni, params)
         refnum = self._create_refnum(document_number)
-        ejercic = datetime.strptime(sale_order.confirmation_date,
+        ejercic = datetime.strptime(str(sale_order.confirmation_date),
                                     "%Y-%m-%d %H:%M:%S").strftime("%y")
 
         # Register the Dimoni Operation in database and self object
