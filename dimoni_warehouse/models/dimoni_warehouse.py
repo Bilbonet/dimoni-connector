@@ -60,10 +60,10 @@ class DimoniWarehouse(models.Model):
             document.grp_id, document.tipo_doc,
             document.company_id.dimoni_serie.almacen,
             document.ejercic, document.cod_serie, document.document,
-            datetime.strptime(sale_order.confirmation_date,
+            datetime.strptime(str(sale_order.confirmation_date),
                               "%Y-%m-%d %H:%M:%S"),
             document.signo, document.cod_serie, document.refnum,
-            datetime.strptime(sale_order.confirmation_date,
+            datetime.strptime(str(sale_order.confirmation_date),
                               "%Y-%m-%d %H:%M:%S"),
             sale_order.name,
         ]
@@ -134,7 +134,7 @@ class DimoniWarehouse(models.Model):
         document_number = self.env['dimoni.sale']._asign_document_number(
                                                             db_dimoni, params)
         refnum = self.env['dimoni.sale']._create_refnum(document_number)
-        ejercic = datetime.strptime(sale_order.confirmation_date,
+        ejercic = datetime.strptime(str(sale_order.confirmation_date),
                                     "%Y-%m-%d %H:%M:%S").strftime("%y")
 
         # Register the Dimoni Operation in database and self object
