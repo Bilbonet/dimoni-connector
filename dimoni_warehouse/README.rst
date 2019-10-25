@@ -2,9 +2,9 @@
    :target: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
    :alt: License: LGPL-3
 
-===============================
+===========================================
 Warehouse operations from Odoo sales orders
-===============================
+===========================================
 
 This module extend "domino_connector" adding the possibility of create
 warehouse operations from odoo sale orders.
@@ -25,14 +25,12 @@ Usage
 
 To use this module:
 
-* Go to Settings > Database Structure > Database Sources
-* Click on Create to enter the following information:
+* Got to Settings > Users and Companies > Companies
+    * Edit company and enter the information in 'Dimoni Connectión' sheet.
 
-* Datasource name 
-* Pasword
-* Connector: Choose the database to which you want to connect
-* Connection string: Specify how to connect to database
-
+In the sale orders you can choose a Dimoni warehouse destiny.
+Then the button 'Dimoni Sale' change to 'Dimoni Warehouse' and
+the OPA in dimoni is created as  warehouse operation.
 
 Known issues / Roadmap
 ======================
