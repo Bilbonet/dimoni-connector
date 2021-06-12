@@ -1,0 +1,235 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* dimoni_connector
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-12 10:15+0000\n"
+"PO-Revision-Date: 2021-06-12 10:15+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dimoni_connector
+#: model_terms:ir.ui.view,arch_db:dimoni_connector.dimoni_form_res_company
+msgid "<strong>Before change the year and serie's counters,</strong> you shouldn't have sales pending in the previous year.<br/>\n"
+"                        Otherwise the document numbers don't coincide betwen Odoo and Dimoni."
+msgstr ""
+
+#. module: dimoni_connector
+#: model:ir.model,name:dimoni_connector.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_company__company_id
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_sale__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_company__create_uid
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_document__create_uid
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_sale__create_uid
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_serie__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_company__create_date
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_document__create_date
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_sale__create_date
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_serie__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_company__dbconnection_id
+#: model:ir.model.fields,field_description:dimoni_connector.field_res_company__dbconnection_id
+msgid "Database connection"
+msgstr ""
+
+#. module: dimoni_connector
+#: model_terms:ir.ui.view,arch_db:dimoni_connector.dimoni_form_sale_order
+msgid "Delete Dimoni Sale"
+msgstr ""
+
+#. module: dimoni_connector
+#: model:ir.model,name:dimoni_connector.model_dimoni_company
+msgid "Dimoni Companies"
+msgstr ""
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_res_company__dimoni_company
+msgid "Dimoni Company"
+msgstr ""
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_company__cod_emp
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_sale__cod_emp
+msgid "Dimoni Company Code"
+msgstr ""
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_company__grp_id
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_document__grp_id
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_sale__grp_id
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_serie__grp_id
+msgid "Dimoni Company Code Identifier"
+msgstr ""
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_company__name
+msgid "Dimoni Company Name"
+msgstr ""
+
+#. module: dimoni_connector
+#: model:ir.model,name:dimoni_connector.model_dimoni_serie
+msgid "Dimoni Company Series"
+msgstr ""
+
+#. module: dimoni_connector
+#: model_terms:ir.ui.view,arch_db:dimoni_connector.dimoni_form_res_company
+msgid "Dimoni Connection"
+msgstr ""
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_sale__document
+msgid "Dimoni Docu Number"
+msgstr ""
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_sale__refnum
+msgid "Dimoni Docu Reference"
+msgstr ""
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_document__name
+msgid "Dimoni Document Name"
+msgstr ""
+
+#. module: dimoni_connector
+#: model:ir.model,name:dimoni_connector.model_dimoni_document
+msgid "Dimoni Document Types"
+msgstr ""
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_sale_order__dimoni_sale
+#: model_terms:ir.ui.view,arch_db:dimoni_connector.dimoni_form_sale_order
+msgid "Dimoni Sale"
+msgstr ""
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_res_company__dimoni_docsale
+#: model_terms:ir.ui.view,arch_db:dimoni_connector.dimoni_form_res_company
+msgid "Dimoni Sale OPA"
+msgstr ""
+
+#. module: dimoni_connector
+#: model:ir.model,name:dimoni_connector.model_dimoni_sale
+msgid "Dimoni Sales"
+msgstr ""
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_serie__almacen
+msgid "Dimoni Serie Almacén"
+msgstr ""
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_document__cod_serie
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_sale__cod_serie
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_serie__cod_serie
+msgid "Dimoni Serie Code"
+msgstr ""
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_serie__name
+msgid "Dimoni Serie Name"
+msgstr ""
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_res_company__dimoni_serie
+msgid "Dimoni Serie Sales"
+msgstr ""
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_document__tipo_doc
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_sale__tipo_doc
+msgid "Dimoni Tipo Doc"
+msgstr ""
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_sale__ejercic
+msgid "Dimoni two digits year as accounting exercise"
+msgstr ""
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_company__display_name
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_document__display_name
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_sale__display_name
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_serie__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_company__id
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_document__id
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_sale__id
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_serie__id
+msgid "ID"
+msgstr ""
+
+#. module: dimoni_connector
+#: model_terms:ir.ui.view,arch_db:dimoni_connector.dimoni_form_res_company
+msgid "Important notes:"
+msgstr ""
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_company____last_update
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_document____last_update
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_sale____last_update
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_serie____last_update
+msgid "Last Modified on"
+msgstr "Modificado por última vez el"
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_company__write_uid
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_document__write_uid
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_sale__write_uid
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_serie__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_company__write_date
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_document__write_date
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_sale__write_date
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_serie__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_sale__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: dimoni_connector
+#: model:ir.model,name:dimoni_connector.model_sale_order
+msgid "Sale Order"
+msgstr ""
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_document__ambito
+msgid "Sale, Purchase, Warehouse, TPV"
+msgstr ""
+
+#. module: dimoni_connector
+#: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_sale__signo
+msgid "V: Sale, P:Purchase, A:Warehouse"
+msgstr ""
+
