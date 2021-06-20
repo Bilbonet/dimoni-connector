@@ -33,49 +33,49 @@ msgstr "Creado en"
 #. module: dimoni_warehouse
 #: model_terms:ir.ui.view,arch_db:dimoni_warehouse.dimoni_warehouse_form_sale_order
 msgid "Delete Dimoni Warehouse"
-msgstr ""
+msgstr "Eliminar Operación Almecén"
 
 #. module: dimoni_warehouse
 #: model:ir.model.fields,field_description:dimoni_warehouse.field_dimoni_warehouse__grp_id
 msgid "Dimoni Company Code Identifier"
-msgstr ""
+msgstr "Identificador de la empresa de Dimoni"
 
 #. module: dimoni_warehouse
 #: model:ir.model.fields,field_description:dimoni_warehouse.field_res_company__dimoni_serie_wh
 msgid "Dimoni Serie Warehouse"
-msgstr ""
+msgstr "Dimonni Serie de almacén"
 
 #. module: dimoni_warehouse
 #: model:ir.model.fields,field_description:dimoni_warehouse.field_sale_order__dimoni_wh
 #: model_terms:ir.ui.view,arch_db:dimoni_warehouse.dimoni_warehouse_form_sale_order
 msgid "Dimoni Warehouse"
-msgstr ""
+msgstr "Almacén Dimoni"
 
 #. module: dimoni_warehouse
 #: model:ir.model.fields,field_description:dimoni_warehouse.field_dimoni_warehouse__cod_wh
 msgid "Dimoni Warehouse Code"
-msgstr ""
+msgstr "Código Almacén Dimoni"
 
 #. module: dimoni_warehouse
 #: model_terms:ir.ui.view,arch_db:dimoni_warehouse.dimoni_warehouse_form_sale_order
 msgid "Dimoni Warehouse Destiny"
-msgstr ""
+msgstr "Destino Almacén Dimoni"
 
 #. module: dimoni_warehouse
 #: model:ir.model.fields,field_description:dimoni_warehouse.field_dimoni_warehouse__name
 msgid "Dimoni Warehouse Name"
-msgstr ""
+msgstr "Nombre Almacén Dimoni"
 
 #. module: dimoni_warehouse
 #: model:ir.model.fields,field_description:dimoni_warehouse.field_res_company__dimoni_docwh
 #: model_terms:ir.ui.view,arch_db:dimoni_warehouse.dimoni_warehouse_form_res_company
 msgid "Dimoni Warehouse OPA"
-msgstr ""
+msgstr "OPA Almacén Dimoni"
 
 #. module: dimoni_warehouse
 #: model:ir.model,name:dimoni_warehouse.model_dimoni_warehouse
 msgid "Dimoni Warehouses"
-msgstr ""
+msgstr "Almacén Dimoni"
 
 #. module: dimoni_warehouse
 #: model:ir.model.fields,field_description:dimoni_warehouse.field_dimoni_warehouse__display_name
@@ -90,7 +90,7 @@ msgstr ""
 #. module: dimoni_warehouse
 #: model_terms:ir.ui.view,arch_db:dimoni_warehouse.dimoni_warehouse_form_res_company
 msgid "In Dimoni the 'Serie' contains the origin warehouse.<br/>We only show the 'Series' with warehouse assigned."
-msgstr ""
+msgstr "En Dimoni la 'Serie' contiene el almacén origen.<br/>Solo mostramos las 'series' con almacén asignado."
 
 #. module: dimoni_warehouse
 #: model:ir.model.fields,field_description:dimoni_warehouse.field_dimoni_warehouse____last_update
@@ -110,10 +110,10 @@ msgstr "Última actualización en"
 #. module: dimoni_warehouse
 #: model:ir.model,name:dimoni_warehouse.model_sale_order
 msgid "Sale Order"
-msgstr ""
+msgstr "Orden de venta"
 
 #. module: dimoni_warehouse
 #: model_terms:ir.ui.view,arch_db:dimoni_warehouse.dimoni_warehouse_form_res_company
 msgid "Warehouse Origin"
-msgstr ""
+msgstr "Almacén Origen"
 

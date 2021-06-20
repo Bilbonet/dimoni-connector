@@ -8,7 +8,9 @@
     "category": "Inventory",
     'website': 'https://github.com/Bilbonet/dimoni-connector',
     "depends": [
+        'base',
         'stock',
+        'dimoni_warehouse',
     ],
     "data": [
         'views/stock_inventory_views.xml',

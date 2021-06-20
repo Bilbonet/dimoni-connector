@@ -19,7 +19,8 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:dimoni_connector.dimoni_form_res_company
 msgid "<strong>Before change the year and serie's counters,</strong> you shouldn't have sales pending in the previous year.<br/>\n"
 "                        Otherwise the document numbers don't coincide betwen Odoo and Dimoni."
-msgstr ""
+msgstr "<strong>Antes de cambiar de año y los contadores de las series,</strong> no deberías tener ventas pendienes del año anterior.<br/>\n"
+"                        De otra forma los numeros de documentos no coincidiran entre Odoo y Dimoni."
 
 #. module: dimoni_connector
 #: model:ir.model,name:dimoni_connector.model_res_company
@@ -52,28 +53,28 @@ msgstr "Creado en"
 #: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_company__dbconnection_id
 #: model:ir.model.fields,field_description:dimoni_connector.field_res_company__dbconnection_id
 msgid "Database connection"
-msgstr ""
+msgstr "Conexión Base Datos"
 
 #. module: dimoni_connector
 #: model_terms:ir.ui.view,arch_db:dimoni_connector.dimoni_form_sale_order
 msgid "Delete Dimoni Sale"
-msgstr ""
+msgstr "Eliminar Venta Dimoni"
 
 #. module: dimoni_connector
 #: model:ir.model,name:dimoni_connector.model_dimoni_company
 msgid "Dimoni Companies"
-msgstr ""
+msgstr "Empresas Dimoni"
 
 #. module: dimoni_connector
 #: model:ir.model.fields,field_description:dimoni_connector.field_res_company__dimoni_company
 msgid "Dimoni Company"
-msgstr ""
+msgstr "Empresa Dimoni"
 
 #. module: dimoni_connector
 #: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_company__cod_emp
 #: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_sale__cod_emp
 msgid "Dimoni Company Code"
-msgstr ""
+msgstr "Código Empresa Dimoni"
 
 #. module: dimoni_connector
 #: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_company__grp_id
@@ -81,92 +82,92 @@ msgstr ""
 #: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_sale__grp_id
 #: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_serie__grp_id
 msgid "Dimoni Company Code Identifier"
-msgstr ""
+msgstr "Código Identificación Empresa Dimoni"
 
 #. module: dimoni_connector
 #: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_company__name
 msgid "Dimoni Company Name"
-msgstr ""
+msgstr "Nombre Empresa Dimoni"
 
 #. module: dimoni_connector
 #: model:ir.model,name:dimoni_connector.model_dimoni_serie
 msgid "Dimoni Company Series"
-msgstr ""
+msgstr "Series Empresa Dimoni"
 
 #. module: dimoni_connector
 #: model_terms:ir.ui.view,arch_db:dimoni_connector.dimoni_form_res_company
 msgid "Dimoni Connection"
-msgstr ""
+msgstr "Copnexión Dimoni"
 
 #. module: dimoni_connector
 #: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_sale__document
 msgid "Dimoni Docu Number"
-msgstr ""
+msgstr "N.Docu Dimoni"
 
 #. module: dimoni_connector
 #: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_sale__refnum
 msgid "Dimoni Docu Reference"
-msgstr ""
+msgstr "Ref.Docu Dimoni"
 
 #. module: dimoni_connector
 #: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_document__name
 msgid "Dimoni Document Name"
-msgstr ""
+msgstr "Nombre Docu Dimoni"
 
 #. module: dimoni_connector
 #: model:ir.model,name:dimoni_connector.model_dimoni_document
 msgid "Dimoni Document Types"
-msgstr ""
+msgstr "Tipos Documentos Diomoni"
 
 #. module: dimoni_connector
 #: model:ir.model.fields,field_description:dimoni_connector.field_sale_order__dimoni_sale
 #: model_terms:ir.ui.view,arch_db:dimoni_connector.dimoni_form_sale_order
 msgid "Dimoni Sale"
-msgstr ""
+msgstr "Venta Dimoni"
 
 #. module: dimoni_connector
 #: model:ir.model.fields,field_description:dimoni_connector.field_res_company__dimoni_docsale
 #: model_terms:ir.ui.view,arch_db:dimoni_connector.dimoni_form_res_company
 msgid "Dimoni Sale OPA"
-msgstr ""
+msgstr "OPA Venta Dimoni"
 
 #. module: dimoni_connector
 #: model:ir.model,name:dimoni_connector.model_dimoni_sale
 msgid "Dimoni Sales"
-msgstr ""
+msgstr "Ventas Dimoni"
 
 #. module: dimoni_connector
 #: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_serie__almacen
 msgid "Dimoni Serie Almacén"
-msgstr ""
+msgstr "Dimoni Serie Almacén"
 
 #. module: dimoni_connector
 #: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_document__cod_serie
 #: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_sale__cod_serie
 #: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_serie__cod_serie
 msgid "Dimoni Serie Code"
-msgstr ""
+msgstr "Codigo Serie Dimoni"
 
 #. module: dimoni_connector
 #: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_serie__name
 msgid "Dimoni Serie Name"
-msgstr ""
+msgstr "Nombre Serie Dimoni"
 
 #. module: dimoni_connector
 #: model:ir.model.fields,field_description:dimoni_connector.field_res_company__dimoni_serie
 msgid "Dimoni Serie Sales"
-msgstr ""
+msgstr "Dimoni Series Venta"
 
 #. module: dimoni_connector
 #: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_document__tipo_doc
 #: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_sale__tipo_doc
 msgid "Dimoni Tipo Doc"
-msgstr ""
+msgstr "Dimoni Tipo Doc"
 
 #. module: dimoni_connector
 #: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_sale__ejercic
 msgid "Dimoni two digits year as accounting exercise"
-msgstr ""
+msgstr "Dinmoni ejercicio Año de dos dígitos"
 
 #. module: dimoni_connector
 #: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_company__display_name
@@ -187,7 +188,7 @@ msgstr ""
 #. module: dimoni_connector
 #: model_terms:ir.ui.view,arch_db:dimoni_connector.dimoni_form_res_company
 msgid "Important notes:"
-msgstr ""
+msgstr "Notas Importantes:"
 
 #. module: dimoni_connector
 #: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_company____last_update
@@ -221,15 +222,15 @@ msgstr "Nombre"
 #. module: dimoni_connector
 #: model:ir.model,name:dimoni_connector.model_sale_order
 msgid "Sale Order"
-msgstr ""
+msgstr "Orden Venta"
 
 #. module: dimoni_connector
 #: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_document__ambito
 msgid "Sale, Purchase, Warehouse, TPV"
-msgstr ""
+msgstr "Venta, Compra, Almacén, TPV"
 
 #. module: dimoni_connector
 #: model:ir.model.fields,field_description:dimoni_connector.field_dimoni_sale__signo
 msgid "V: Sale, P:Purchase, A:Warehouse"
-msgstr ""
+msgstr "V:Venta, P:Compra, A:Almacén"
 
