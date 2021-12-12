@@ -1,8 +1,9 @@
 # Copyright 2019 Jesus Ramiro <jesus@bilbonet.net>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {
-    "name": "Dimoni warehouse operations from Odoo sales orders",
-    "version": "12.0.1.0.0",
+    "name": "Dimoni Warehouse Operations",
+    "summary": "Dimoni warehouse operations from Odoo sales orders",
+    "version": "12.0.2.0.0",
     "author": "Jesus Ramiro",
     "license": "AGPL-3",
     "category": "Connector",

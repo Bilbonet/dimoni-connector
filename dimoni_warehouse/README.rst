@@ -2,12 +2,12 @@
    :target: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
    :alt: License: LGPL-3
 
-===========================================
-Warehouse operations from Odoo sales orders
-===========================================
+==================================================
+Dimoni warehouse operations from Odoo sales orders
+==================================================
 
 This module extend "domino_connector" adding the possibility of create
-warehouse operations from odoo sale orders.
+warehouse operations from odoo sale orders into ERP Dimoni
 
 
 Installation

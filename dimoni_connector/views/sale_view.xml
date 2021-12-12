@@ -28,6 +28,7 @@
                 </button>
             </xpath>
             <xpath expr="//field[@name='name']" position="after">
+                &#x2063;&#x2063;
                 <field name="dimoni_sale"
                        options='{"no_open": True, "no_create": True}'
                        attrs="{'invisible':[('dimoni_sale','=',False)]}"

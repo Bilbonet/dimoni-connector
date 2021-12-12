@@ -7,10 +7,10 @@ from odoo import api, fields, models
 class Company(models.Model):
     _inherit = 'res.company'
 
-    dimoni_serie_wh = fields.Many2one('dimoni.serie',
-                                string='Dimoni Serie Warehouse')
-    dimoni_docwh = fields.Many2one('dimoni.document',
-                                string='Dimoni Warehouse OPA')
+    dimoni_serie_wh = fields.Many2one(string='Dimoni Warehouse Serie',
+        comodel_name='dimoni.serie')
+    dimoni_docwh = fields.Many2one(string='Dimoni Warehouse OPA',
+        comodel_name='dimoni.document')
 
     @api.onchange('dimoni_company')
     def _onchange_dimoni_company_wh(self):

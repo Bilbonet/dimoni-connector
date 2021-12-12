@@ -12,10 +12,10 @@
                     <!-- Connection & Company-->
                     <group>
                         <group>
-                            <field name="dbconnection_id"/>
+                            <field name="dbconnection_id"
+                                   options='{"no_open": True, "no_create": True}'/>
                             <field name="dimoni_company"
-                                   required="True"
-                                   domain="[('dbconnection_id', '=', dbconnection_id)]"
+                                   domain="[('company_id', '=', active_id), ('dbconnection_id', '=', dbconnection_id)]"
                                    options='{"no_open": True, "no_create": True}'/>
                         </group>
                     </group>
@@ -23,12 +23,10 @@
                     <group>
                         <group name="sale_order" string="Dimoni Sale OPA">
                             <field name="dimoni_serie"
-                                   required="True"
                                    domain="[('grp_id', '=', dimoni_company)]"
                                    options='{"no_open": True, "no_create": True}'/>
                             <field name="dimoni_docsale"
-                                   required="True"
-                                   domain="[('ambito', '=', 2)]"
+                                   domain="[('grp_id', '=', dimoni_company),('ambito', '=', 2)]"
                                    options='{"no_open": True, "no_create": True}'/>
                         </group>
                     </group>

@@ -1,10 +1,9 @@
 # Copyright 2018 Jesus Ramiro <jesus@bilbonet.net>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-
 from datetime import datetime
 from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError, UserError
+from odoo.exceptions import UserError
 
 
 class DimoniWarehouse(models.Model):
@@ -12,10 +11,16 @@ class DimoniWarehouse(models.Model):
     _description = "Dimoni Warehouses"
     _order = 'cod_wh'
 
-    grp_id = fields.Many2one('dimoni.company',
-                             string='Dimoni Company Code Identifier')
+    grp_id = fields.Many2one(string='Company Code', 
+        comodel_name='dimoni.company', ondelete='cascade',
+        help='Dimoni Company Code Identifier')
     cod_wh = fields.Char(string='Dimoni Warehouse Code', size=3)
-    name = fields.Char(string='Dimoni Warehouse Name', size=30)
+    name = fields.Char(string='Dimoni Warehouse', size=30)
+
+    _sql_constraints = [(
+            'uniq_cod_wh',
+            'unique(grp_id, cod_wh)',
+            'A Dimoni Warehouse with the same code already exists for this company!')]
 
     def import_warehouse(self, company):
         # Obtain Dimoni Warehouses
@@ -23,36 +28,27 @@ class DimoniWarehouse(models.Model):
         db_dimoni = company.dbconnection_id
 
         # Fields Many2one needs XML-ID value for the relation with the model
-        sql = "SELECT Codigo as 'cod_wh', " \
-              "'dimoni_company_'+GRP_ID as 'grp_id/id', " \
+        sql = "SELECT " \
+              "Codigo as 'cod_wh', " \
               "Descrip as 'name' " \
               "FROM dbo.PALMA " \
               "WHERE GRP_ID = ?"
         res = db_dimoni.execute(sql, params, metadata=True)
 
-        # Prepare columns
-        cidx = [i for i, x in enumerate(res['cols'])]
-        cols = [x for i, x in enumerate(res['cols'])] + ['id']
+        if len(res['rows']) == 0:
+            raise UserError(_
+                ("There's no any Warehouse for this company.\n"
+                 "Are you sure is the correct company?"))
 
-        model_name = self._name
-        model_obj = self.env.get(model_name)
-
-        # Import each row
         for row in res['rows']:
-            # Build data row;
-            data = list()
-            for i in cidx:
-                v = row[i]
-                if isinstance(v, str):
-                    v = v.strip()
-                data.append(v)
-
-            data.append(self.env['dimoni.company']._build_xmlid(
-                                                row[0].strip(), self._name))
-
-            # Import row
-            self.env['dimoni.company']._import_data(cols, data, model_obj)
-        return True
+            try:
+                self.create({
+                    'grp_id': company.dimoni_company.id,
+                    'cod_wh': row[0],
+                    'name': row[1],
+                })
+            except:
+                continue
 
     def _create_warehouse_document_header(self, document, sale_order):
         db_dimoni = document.company_id.dbconnection_id
@@ -123,7 +119,6 @@ class DimoniWarehouse(models.Model):
         db_dimoni.commit(sql, data)
         return True
 
-    @api.multi
     def recurring_create_warehouse_dimoni(self, sale_order):
         db_dimoni = sale_order.company_id.dbconnection_id
         grp_id = sale_order.company_id.dimoni_company.grp_id
@@ -222,16 +217,10 @@ class DimoniWarehouse(models.Model):
                     "The document has been processed in Dimoni.\n"
                     "You should first delete it in Dimoni.")
                     % self.name)
-                return False
-            else:
-                return True
         else:
             raise UserError(_
                 ("Something is wrong. Results of the search are not correct."))
-            return False
 
-
-    @api.multi
     def dimoni_delete_warehouse(self, dimoni_document):
         res = self._dimoni_warehouse_delete_document(dimoni_document)
         # Delete record

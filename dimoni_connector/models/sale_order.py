@@ -7,8 +7,7 @@ from odoo import fields, models
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
-    dimoni_sale = fields.Many2one('dimoni.sale',
-                                 string='Dimoni Sale')
+    dimoni_sale = fields.Many2one(string='Dimoni Sale', comodel_name='dimoni.sale')
 
     def dimoni_create_sale(self):
         self.ensure_one()

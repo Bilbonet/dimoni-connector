@@ -10,12 +10,10 @@
             <xpath expr="//group[@name='sale_order']" position="after">
                 <group name="sale_warehouse" string="Dimoni Warehouse OPA">
                     <field name="dimoni_serie_wh"
-                           required="True"
                            domain="[('grp_id', '=', dimoni_company),('almacen', '!=', False)]"
                            options='{"no_open": True, "no_create": True}'/>
                     <field name="dimoni_docwh"
-                           required="True"
-                           domain="[('ambito', '=', 1)]"
+                           domain="[('grp_id', '=', dimoni_company),('ambito', '=', 1)]"
                            options='{"no_open": True, "no_create": True}'/>
                     <p style="color:red;">Warehouse Origin</p>
                     <p style="color:red;">In Dimoni the 'Serie' contains the origin warehouse.<br/>We only show the 'Series' with warehouse assigned.</p>
