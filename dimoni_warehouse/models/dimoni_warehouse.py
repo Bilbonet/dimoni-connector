@@ -217,6 +217,8 @@ class DimoniWarehouse(models.Model):
                     "The document has been processed in Dimoni.\n"
                     "You should first delete it in Dimoni.")
                     % self.name)
+            else:
+                return True
         else:
             raise UserError(_
                 ("Something is wrong. Results of the search are not correct."))
