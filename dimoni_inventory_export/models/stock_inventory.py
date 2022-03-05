@@ -17,7 +17,6 @@ class Inventory(models.Model):
     dimoni_inv_file = fields.Binary(related='dimoni_inv_attachment.datas',
         string='File Content')
 
-    @api.multi
     def generate_inventory_file(self):
         """Returns (inventory file as string, filename)"""
         self.ensure_one()

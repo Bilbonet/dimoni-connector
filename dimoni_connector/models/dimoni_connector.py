@@ -157,7 +157,6 @@ class DimoniSale(models.Model):
     _name = "dimoni.sale"
     _description = "Dimoni Sales"
 
-    @api.one
     @api.depends('cod_emp', 'cod_serie', 'tipo_doc', 'document')
     def _compute_name(self):
         self.name = self.cod_emp + ' (' + \
@@ -310,7 +309,6 @@ class DimoniSale(models.Model):
         db_dimoni.commit(sql, data)
         return True
 
-    @api.multi
     def recurring_create_sale_dimoni(self, sale_order):
         db_dimoni = sale_order.company_id.dbconnection_id
         grp_id = sale_order.company_id.dimoni_company.grp_id
@@ -409,7 +407,6 @@ class DimoniSale(models.Model):
             raise UserError(_
                 ("Something is wrong. Results of the search are not correct."))
 
-    @api.multi
     def dimoni_delete_sale(self, dimoni_document):
         # Keep dimoni document in self
         self = dimoni_document
