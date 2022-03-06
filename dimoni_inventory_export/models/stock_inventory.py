@@ -46,7 +46,6 @@ class Inventory(models.Model):
             vals.update({
                 'name': filename,
                 'datas': base64.b64encode(inventory_file_str),
-                # 'datas_fname': filename,
             })
 
             if not self. dimoni_inv_attachment:
