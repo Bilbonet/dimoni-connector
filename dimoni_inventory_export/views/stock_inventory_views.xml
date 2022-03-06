@@ -14,7 +14,7 @@
                         attrs="{'invisible': ['|',('state','!=', 'confirm'),('dimoni_wh', '=', False)]}"
                         groups=" stock.group_stock_manager"/>
             </field>
-            <field name="filter" position="after">
+            <field name="product_ids" position="after">
                 <field name="dimoni_wh" string="Dimoni Warehouse"
                        options='{"no_open": True, "no_create": True}'
                        style="color:red;"/>

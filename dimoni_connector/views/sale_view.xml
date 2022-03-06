@@ -7,11 +7,11 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
-            <button name="action_unlock" position="attributes">
+            <!-- <button name="action_unlock" position="attributes">
                 <attribute name="attrs">{'invisible':['|',('state', 'not in', ('done')),('dimoni_sale','!=', False)]}</attribute>
                 <attribute name="states"/>
-            </button>
-            <xpath expr="//button[@name='action_unlock']" position="after">
+            </button> -->
+            <xpath expr="//form//header//button[@name='action_draft']" position="after">
                 <button type="object"
                         name="dimoni_create_sale"
                         string="Dimoni Sale"
