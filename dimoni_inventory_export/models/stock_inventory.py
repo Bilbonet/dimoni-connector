@@ -1,7 +1,7 @@
 # Copyright 2021 Jesus Ramiro <jesus@bilbonet.net>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import fields, models, api, _
+from odoo import fields, models, _
 from odoo.exceptions import UserError
 import base64
 
@@ -12,7 +12,7 @@ class Inventory(models.Model):
     dimoni_wh = fields.Many2one(comodel_name='dimoni.warehouse', string='Dimoni Warehouse')
     dimoni_inv_attachment = fields.Many2one('ir.attachment',
         string='Inventory File', readonly=True, copy=False)
-    dimoni_inv_filename = fields.Char(related='dimoni_inv_attachment.datas_fname',
+    dimoni_inv_filename = fields.Char(related='dimoni_inv_attachment.name',
         string='File Name')
     dimoni_inv_file = fields.Binary(related='dimoni_inv_attachment.datas',
         string='File Content')
@@ -46,7 +46,7 @@ class Inventory(models.Model):
             vals.update({
                 'name': filename,
                 'datas': base64.b64encode(inventory_file_str),
-                'datas_fname': filename,
+                # 'datas_fname': filename,
             })
 
             if not self. dimoni_inv_attachment:
