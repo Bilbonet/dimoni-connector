@@ -3,7 +3,7 @@
 {
     "name": "Dimoni Warehouse Operations",
     "summary": "Dimoni warehouse operations from Odoo sales orders",
-    "version": "13.0.2.0.0",
+    "version": "13.0.1.0.0",
     "author": "Jesus Ramiro",
     "license": "AGPL-3",
     "category": "Connector",

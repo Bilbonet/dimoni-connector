@@ -159,10 +159,11 @@ class DimoniSale(models.Model):
 
     @api.depends('cod_emp', 'cod_serie', 'tipo_doc', 'document')
     def _compute_name(self):
-        self.name = self.cod_emp + ' (' + \
-                    datetime.strptime(self.ejercic, "%y").strftime("%Y") + \
-                    ') ' + ' / ' + self.tipo_doc + '-' +  \
-                    self.cod_serie + '-' + str(self.document)
+        for doc in self:
+            doc.name = doc.cod_emp + ' (' + \
+                datetime.strptime(doc.ejercic, "%y").strftime("%Y") + \
+                ') ' + ' / ' + doc.tipo_doc + '-' +  \
+                doc.cod_serie + '-' + str(doc.document)
 
     name = fields.Char(compute='_compute_name')
     company_id = fields.Many2one(string='Company', 
@@ -236,10 +237,10 @@ class DimoniSale(models.Model):
         data = [
             self.grp_id, self.cod_serie, self.tipo_doc,
             sale_order.partner_id.ref, self.ejercic, self.document,
-            datetime.strptime(str(sale_order.confirmation_date),
+            datetime.strptime(str(sale_order.date_order),
                               "%Y-%m-%d %H:%M:%S"),
             self.signo, self.cod_serie, self.refnum,
-            datetime.strptime(str(sale_order.confirmation_date),
+            datetime.strptime(str(sale_order.date_order),
                               "%Y-%m-%d %H:%M:%S"),
             sale_order.partner_id.ref,
             sale_order.name,
@@ -318,7 +319,7 @@ class DimoniSale(models.Model):
 
         document_number = self._asign_document_number(db_dimoni, params)
         refnum = self._create_refnum(document_number)
-        ejercic = datetime.strptime(str(sale_order.confirmation_date),
+        ejercic = datetime.strptime(str(sale_order.date_order),
                                     "%Y-%m-%d %H:%M:%S").strftime("%y")
 
         # Register the Dimoni Operation in database and self object

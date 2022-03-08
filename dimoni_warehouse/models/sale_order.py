@@ -18,6 +18,9 @@ class SaleOrder(models.Model):
 
     def dimoni_delete_warehouse(self):
         self.ensure_one()
-        self.env['dimoni.warehouse'].dimoni_delete_warehouse(self.dimoni_sale)
+        res = self.env['dimoni.warehouse'].dimoni_delete_warehouse(self.dimoni_sale)
 
-        return True
+        if res:
+            # Change Sale Order state to sale
+            self.update({'state': 'sale'})
+            return True
