@@ -113,7 +113,7 @@ class DimoniDocument(models.Model):
     cod_serie = fields.Many2one('dimoni.serie', string='Dimoni Serie Code')
     tipo_doc = fields.Char(string='Dimoni Tipo Doc', size=2)
     name = fields.Char(string='Dimoni Document Name', size=30)
-    ambito = fields.Integer(string='Sale, Purchase, Warehouse, TPV', size=1)
+    ambito = fields.Integer(string='Sale, Purchase, Warehouse, TPV')
 
     _sql_constraints = [(
             'uniq_document',
